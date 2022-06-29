@@ -10,7 +10,6 @@ export default function Home() {
   if (fetching) return <p>Loading...</p>;
   if (error) return <p>Ooopsie..{error.message}</p>;
   const products = data.products.data;
-  console.log(products);
   return (
     <div>
       <Head>
@@ -22,7 +21,7 @@ export default function Home() {
       <main>
         <h1>Hello Next</h1>
         {products.map((product) => (
-          <Product product={product} />
+          <Product key={product.attributes.slug} product={product} />
         ))}
       </main>
     </div>
