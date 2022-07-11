@@ -20,7 +20,7 @@ query{
 }
 `;
 
-export const GET_PRODUCTT_QUERY = `
+export const GET_PRODUCT_QUERY = `
   query getProduct($slug: String!){
     products(filters: {slug: {eq: $slug}}){
       data{
