@@ -7,6 +7,7 @@ import {
   Quantity,
   Buy,
 } from "../../styles/ProductDetails";
+import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 
 export default function ProductDetails() {
   const { query } = useRouter();
@@ -31,9 +32,13 @@ export default function ProductDetails() {
         <p>{description}</p>
         <Quantity>
           <span>Quantity</span>
-          <button>Plus</button>
+          <button>
+            <AiFillPlusCircle />
+          </button>
           <p>0</p>
-          <button>Minus</button>
+          <button>
+            <AiFillMinusCircle />
+          </button>
         </Quantity>
         <Buy>Add to Cart</Buy>
       </ProductInfo>
