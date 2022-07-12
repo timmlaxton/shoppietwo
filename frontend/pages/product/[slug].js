@@ -33,11 +33,11 @@ export default function ProductDetails() {
         <Quantity>
           <span>Quantity</span>
           <button>
-            <AiFillPlusCircle />
+            <AiFillMinusCircle />
           </button>
           <p>0</p>
           <button>
-            <AiFillMinusCircle />
+            <AiFillPlusCircle />
           </button>
         </Quantity>
         <Buy>Add to Cart</Buy>
