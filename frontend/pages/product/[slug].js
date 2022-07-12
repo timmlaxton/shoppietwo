@@ -29,13 +29,13 @@ export default function ProductDetails() {
       <ProductInfo>
         <h3>{title}</h3>
         <p>{description}</p>
-        <div>
+        <Quantity>
           <span>Quantity</span>
           <button>Plus</button>
           <p>0</p>
           <button>Minus</button>
-        </div>
-        <button>Add to Cart</button>
+        </Quantity>
+        <Buy>Add to Cart</Buy>
       </ProductInfo>
     </DetailsStyle>
   );

@@ -42,7 +42,7 @@ export const Quantity = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const Buy = styled.button`
   width: 100%;
   background: var(--primary);
   color: white;
