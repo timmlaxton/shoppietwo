@@ -8,8 +8,10 @@ import {
   Buy,
 } from "../../styles/ProductDetails";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import { useStateContext } from "../../lib/context";
 
 export default function ProductDetails() {
+  const { qty } = useStateContext();
   const { query } = useRouter();
 
   const [results] = useQuery({
