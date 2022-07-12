@@ -1,6 +1,7 @@
 import { useQuery } from "urql";
 import { GET_PRODUCT_QUERY } from "../../lib/query";
 import { useRouter } from "next/router";
+import { DetailsStyle, ProductInfo } from "../../styles/ProductDetails";
 
 export default function ProductDetails() {
   const { query } = useRouter();
@@ -18,19 +19,19 @@ export default function ProductDetails() {
   const { title, description, image } = data.products.data[0].attributes;
 
   return (
-    <div>
+    <DetailsStyle>
       <img src={image.data.attributes.formats.medium.url} alt={title} />
-      <div>
+      <ProductInfo>
         <h3>{title}</h3>
         <p>{description}</p>
-      </div>
-      <div>
-        <span>Quantity</span>
-        <button>Plus</button>
-        <p>0</p>
-        <button>Minus</button>
-      </div>
+        <div>
+          <span>Quantity</span>
+          <button>Plus</button>
+          <p>0</p>
+          <button>Minus</button>
+        </div>
+      </ProductInfo>
       <button>Add to Cart</button>
-    </div>
+    </DetailsStyle>
   );
 }
