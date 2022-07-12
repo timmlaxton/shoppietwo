@@ -1,7 +1,12 @@
 import { useQuery } from "urql";
 import { GET_PRODUCT_QUERY } from "../../lib/query";
 import { useRouter } from "next/router";
-import { DetailsStyle, ProductInfo } from "../../styles/ProductDetails";
+import {
+  DetailsStyle,
+  ProductInfo,
+  Quantity,
+  Buy,
+} from "../../styles/ProductDetails";
 
 export default function ProductDetails() {
   const { query } = useRouter();
@@ -30,8 +35,8 @@ export default function ProductDetails() {
           <p>0</p>
           <button>Minus</button>
         </div>
+        <button>Add to Cart</button>
       </ProductInfo>
-      <button>Add to Cart</button>
     </DetailsStyle>
   );
 }
