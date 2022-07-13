@@ -1,5 +1,12 @@
 import { useStateContext } from "../lib/context";
-import { CartWrapper, CartStyle, Card, CardInfo } from "../styles/CartStyle";
+import {
+  CartWrapper,
+  CartStyle,
+  Card,
+  CardInfo,
+  EmptyStyle,
+} from "../styles/CartStyle";
+import { FaShoppingBag } from "react-icons/Fa";
 
 export default function Cart() {
   const { cartItems } = useStateContext();
@@ -7,9 +14,10 @@ export default function Cart() {
     <CartWrapper>
       <CartStyle>
         {cartItems.length < 1 && (
-          <div>
+          <EmptyStyle>
             <h1>Cart is empty</h1>
-          </div>
+            <FaShoppingBag />
+          </EmptyStyle>
         )}
         {cartItems.length >= 1 &&
           cartItems.map((item) => {

@@ -41,3 +41,24 @@ export const CardInfo = styled.div`
     flex-direction: space-between;
   }
 `;
+
+export const EmptyStyle = styled.div`
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  h1 {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+  svg {
+    font-size: 10rem;
+    color: var(--secondary);
+  }
+`;
