@@ -43,7 +43,7 @@ export const Quantity = styled.div`
 `;
 
 export const Buy = styled.button`
-  width: 100%;
+  width: 48%;
   background: var(--primary);
   color: white;
   font-weight: 500;

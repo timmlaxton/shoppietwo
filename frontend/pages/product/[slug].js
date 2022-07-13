@@ -11,7 +11,7 @@ import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { useStateContext } from "../../lib/context";
 
 export default function ProductDetails() {
-  const { qty, increaseQty, decreaseQty } = useStateContext();
+  const { qty, increaseQty, decreaseQty, cartItems, onAdd } = useStateContext();
   const { query } = useRouter();
 
   const [results] = useQuery({
@@ -25,7 +25,7 @@ export default function ProductDetails() {
   if (error) return <p>Oh no...{error.message}</p>;
 
   const { title, description, image } = data.products.data[0].attributes;
-
+  console.log(data.products.data[0].attributes);
   return (
     <DetailsStyle>
       <img src={image.data.attributes.formats.medium.url} alt={title} />
@@ -42,7 +42,9 @@ export default function ProductDetails() {
             <AiFillPlusCircle onClick={increaseQty} />
           </button>
         </Quantity>
-        <Buy>Add to Cart</Buy>
+        <Buy onClick={() => onAdd(data.products.data[0].attributes, qty)}>
+          Add to Cart
+        </Buy>
       </ProductInfo>
     </DetailsStyle>
   );

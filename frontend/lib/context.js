@@ -3,6 +3,8 @@ import React, { createContext, useContext, useState } from "react";
 const ShopContext = createContext();
 
 export const StateContext = ({ children }) => {
+  const [showCart, setShowCart] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
   const [qty, setQty] = useState(1);
 
   const increaseQty = () => {
@@ -16,8 +18,25 @@ export const StateContext = ({ children }) => {
     });
   };
 
+  const onAdd = (product, quantity) => {
+    const exist = cartItems.find((item) => item.slug === product.slug);
+    if (exist) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.slug === product.slug
+            ? { ...exist, quantity: exist.quantity + quantity }
+            : item
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: quantity }]);
+    }
+  };
+
   return (
-    <ShopContext.Provider value={{ qty, increaseQty, decreaseQty }}>
+    <ShopContext.Provider
+      value={{ qty, increaseQty, decreaseQty, showCart, cartItems, onAdd }}
+    >
       {children}
     </ShopContext.Provider>
   );
