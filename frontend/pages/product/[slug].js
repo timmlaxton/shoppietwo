@@ -25,7 +25,6 @@ export default function ProductDetails() {
   if (error) return <p>Oh no...{error.message}</p>;
 
   const { title, description, image } = data.products.data[0].attributes;
-  console.log(data.products.data[0].attributes);
   return (
     <DetailsStyle>
       <img src={image.data.attributes.formats.medium.url} alt={title} />

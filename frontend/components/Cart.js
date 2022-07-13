@@ -8,12 +8,13 @@ import {
   Quantity,
 } from "../styles/CartStyle";
 import { FaShoppingBag } from "react-icons/Fa";
-import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/Ai";
+import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 
 export default function Cart() {
-  const { cartItems } = useStateContext();
+  const { cartItems, setShowCart } = useStateContext();
+
   return (
-    <CartWrapper>
+    <CartWrapper onClick={() => setShowCart(false)}>
       <CartStyle>
         {cartItems.length < 1 && (
           <EmptyStyle>
