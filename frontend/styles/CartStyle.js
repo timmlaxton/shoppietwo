@@ -10,6 +10,7 @@ export const CartWrapper = styled.div`
   z-index: 100;
   display: flex;
   justify-content: flex-end;
+  /* display: none; */
 `;
 
 export const CartStyle = styled.div`
@@ -20,4 +21,9 @@ export const CartStyle = styled.div`
   position: relative;
 `;
 
-export const Cart = styled;
+export const Card = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+`;

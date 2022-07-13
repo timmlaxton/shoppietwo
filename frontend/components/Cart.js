@@ -1,5 +1,5 @@
 import { useStateContext } from "../lib/context";
-import { CartWrapper, CartStyle } from "../styles/CartStyle";
+import { CartWrapper, CartStyle, Card } from "../styles/CartStyle";
 
 export default function Cart() {
   const { cartItems } = useStateContext();
@@ -14,13 +14,16 @@ export default function Cart() {
         {cartItems.length >= 1 &&
           cartItems.map((item) => {
             return (
-              <div>
-                <img src="" alt="" />
+              <Card>
+                <img
+                  src={item.image.data.attributes.formats.thumbnail.url}
+                  alt={item.title}
+                />
                 <div>
                   <h3>{item.title}</h3>
                   <h3>{item.price}</h3>
                 </div>
-              </div>
+              </Card>
             );
           })}
       </CartStyle>
