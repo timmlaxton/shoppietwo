@@ -6,16 +6,23 @@ export default function Cart() {
   return (
     <CartWrapper>
       <CartStyle>
-        <div>
-          <h1>Cart is empty</h1>
-        </div>
-        <div>
-          <img src="" alt="" />
+        {cartItems.length < 1 && (
           <div>
-            <h3>title</h3>
-            <h3>Price</h3>
+            <h1>Cart is empty</h1>
           </div>
-        </div>
+        )}
+        {cartItems.length >= 1 &&
+          cartItems.map((item) => {
+            return (
+              <div>
+                <img src="" alt="" />
+                <div>
+                  <h3>{item.title}</h3>
+                  <h3>{item.price}</h3>
+                </div>
+              </div>
+            );
+          })}
       </CartStyle>
     </CartWrapper>
   );
