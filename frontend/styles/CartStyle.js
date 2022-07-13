@@ -14,9 +14,9 @@ export const CartWrapper = styled.div`
 `;
 
 export const CartStyle = styled.div`
-  width: 40%;
+  width: 60%;
   background: #f1f1f1;
-  padding: 2rem 7rem;
+  padding: 2rem 5rem;
   overflow-y: scroll;
   position: relative;
 `;
@@ -29,7 +29,8 @@ export const Card = styled.div`
   overflow: hidden;
   background: #fff;
   padding: 2rem;
-  margin: 2rem 0rem img {
+  margin: 2rem 0rem;
+  img {
     width: 8rem;
   }
 `;

@@ -5,8 +5,10 @@ import {
   Card,
   CardInfo,
   EmptyStyle,
+  Quantity,
 } from "../styles/CartStyle";
 import { FaShoppingBag } from "react-icons/Fa";
+import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/Ai";
 
 export default function Cart() {
   const { cartItems } = useStateContext();
@@ -30,6 +32,16 @@ export default function Cart() {
                 <CardInfo>
                   <h3>{item.title}</h3>
                   <h3>{item.price}</h3>
+                  <div>
+                    <span>Quantity</span>
+                    <button>
+                      <AiFillMinusCircle />
+                    </button>
+                    <p>{item.quantity}</p>
+                    <button>
+                      <AiFillPlusCircle />
+                    </button>
+                  </div>
                 </CardInfo>
               </Card>
             );
