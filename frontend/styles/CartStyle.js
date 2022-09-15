@@ -16,9 +16,10 @@ export const CartWrapper = styled.div`
 export const CartStyle = styled.div`
   width: 60%;
   background: #f1f1f1;
-  padding: 2rem 5rem;
+  padding: 1rem 5rem;
   overflow-y: scroll;
   position: relative;
+  height: 100%;
 `;
 
 export const Card = styled.div`
@@ -61,5 +62,24 @@ export const EmptyStyle = styled.div`
   svg {
     font-size: 10rem;
     color: var(--secondary);
+  }
+`;
+
+export const Checkout = styled.div`
+  button {
+    background: #36454f;
+    padding: 1rem 2rem;
+    width: 100%;
+    color: #fff;
+    margin-top: 2rem;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    border-radius: 25px;
+  }
+  h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
