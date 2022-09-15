@@ -39,7 +39,7 @@ export const StateContext = ({ children }) => {
       setCartItems(cartItems.filter((item) => item.slug !== product.slug));
     } else {
       setCartItems(
-        cartitems.map((item) =>
+        cartItems.map((item) =>
           item.slug === product.slug
             ? { ...exist, quantity: exist.quantity - 1 }
             : item

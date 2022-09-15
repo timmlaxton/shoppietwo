@@ -11,7 +11,7 @@ import { FaShoppingBag } from "react-icons/Fa";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 
 export default function Cart() {
-  const { cartItems, setShowCart, onAdd } = useStateContext();
+  const { cartItems, setShowCart, onAdd, onRemove } = useStateContext();
 
   return (
     <CartWrapper onClick={() => setShowCart(false)}>
@@ -36,7 +36,7 @@ export default function Cart() {
                   <Quantity>
                     <span>Quantity</span>
                     <button>
-                      <AiFillMinusCircle />
+                      <AiFillMinusCircle onClick={() => onRemove(item)} />
                     </button>
                     <p>{item.quantity}</p>
                     <button onClick={() => onAdd(item, 1)}>
