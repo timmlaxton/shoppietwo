@@ -32,7 +32,7 @@ export default function Cart() {
                 />
                 <CardInfo>
                   <h3>{item.title}</h3>
-                  <h3>{item.price}</h3>
+                  <h3>£{item.price}</h3>
                   <Quantity>
                     <span>Quantity</span>
                     <button>
@@ -47,6 +47,12 @@ export default function Cart() {
               </Card>
             );
           })}
+        {cartItems.lenght >= 1 && (
+          <div>
+            <h3>Subtotal:</h3>
+            <button>Purchase</button>
+          </div>
+        )}
       </CartStyle>
     </CartWrapper>
   );

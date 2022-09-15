@@ -29,4 +29,19 @@ export const NavItems = styled.div`
   svg {
     font-size: 1.5rem;
   }
+  span {
+    background: #4267b2;
+    color: #fff;
+    width: 1.3rem;
+    height: 1.3 rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60%;
+    font-size: 0.75rem;
+    position: absolute;
+    right: -15%;
+    top: -15%;
+    pointer-events: none;
+  }
 `;
