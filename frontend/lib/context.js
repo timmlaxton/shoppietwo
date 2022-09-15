@@ -6,6 +6,7 @@ export const StateContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [qty, setQty] = useState(1);
+  const [totalQuantities, setTotalQuantities] = useState(0);
 
   const increaseQty = () => {
     setQty((prevQty) => prevQty + 1);
@@ -19,6 +20,7 @@ export const StateContext = ({ children }) => {
   };
 
   const onAdd = (product, quantity) => {
+    setTotalQuantities((prevTotal) => prevTotal + quantity);
     const exist = cartItems.find((item) => item.slug === product.slug);
     if (exist) {
       setCartItems(
@@ -34,6 +36,8 @@ export const StateContext = ({ children }) => {
   };
 
   const onRemove = (product) => {
+    setTotalQuantities((prevTotal) => prevTotal - 1);
+
     const exist = cartItems.find((item) => item.slug === product.slug);
     if (exist.quantity === 1) {
       setCartItems(cartItems.filter((item) => item.slug !== product.slug));
@@ -59,6 +63,7 @@ export const StateContext = ({ children }) => {
         cartItems,
         onAdd,
         onRemove,
+        totalQuantities,
       }}
     >
       {children}
