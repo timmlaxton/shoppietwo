@@ -56,11 +56,11 @@ export default function Cart() {
             <FaShoppingBag />
           </EmptyStyle>
         )}
-        <Cards variants={cards} initial="hidden" animate="show">
+        <Cards layout variants={cards} initial="hidden" animate="show">
           {cartItems.length >= 1 &&
             cartItems.map((item) => {
               return (
-                <Card variants={card} key={item.slug}>
+                <Card layout variants={card} key={item.slug}>
                   <img
                     src={item.image.data.attributes.formats.thumbnail.url}
                     alt={item.title}
@@ -84,7 +84,7 @@ export default function Cart() {
             })}
         </Cards>
         {cartItems.length >= 1 && (
-          <Checkout>
+          <Checkout layout>
             <h3>Subtotal: £{totalPrice}</h3>
             <button>Purchase</button>
           </Checkout>
