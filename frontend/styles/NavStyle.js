@@ -32,15 +32,15 @@ export const NavItems = styled.div`
   span {
     background: #4267b2;
     color: #fff;
-    width: 1.3rem;
-    height: 1.3 rem;
+    width: 20px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 60%;
+    border-radius: 50%;
     font-size: 0.75rem;
     position: absolute;
-    right: -15%;
+    right: -25%;
     top: -15%;
     pointer-events: none;
   }

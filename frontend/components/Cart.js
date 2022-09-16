@@ -6,10 +6,27 @@ import {
   CardInfo,
   EmptyStyle,
   Checkout,
+  Cards,
 } from "../styles/CartStyle";
 import { Quantity } from "../styles/ProductDetails";
 import { FaShoppingBag } from "react-icons/Fa";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+
+const card = {
+  hidden: { opacity: 0, scale: 0.8 },
+  show: { opacity: 1, scale: 1, transition: { delay: 0.4 } },
+};
+
+const cards = {
+  hidden: { opacity: 1 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.8,
+    },
+  },
+};
 
 export default function Cart() {
   const { cartItems, setShowCart, onAdd, onRemove, totalPrice } =
@@ -39,36 +56,33 @@ export default function Cart() {
             <FaShoppingBag />
           </EmptyStyle>
         )}
-        {cartItems.length >= 1 &&
-          cartItems.map((item) => {
-            return (
-              <Card
-                inital={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
-                key={item.slug}
-              >
-                <img
-                  src={item.image.data.attributes.formats.thumbnail.url}
-                  alt={item.title}
-                />
-                <CardInfo>
-                  <h3>{item.title}</h3>
-                  <h3>£{item.price}</h3>
-                  <Quantity>
-                    <span>Quantity</span>
-                    <button>
-                      <AiFillMinusCircle onClick={() => onRemove(item)} />
-                    </button>
-                    <p>{item.quantity}</p>
-                    <button onClick={() => onAdd(item, 1)}>
-                      <AiFillPlusCircle />
-                    </button>
-                  </Quantity>
-                </CardInfo>
-              </Card>
-            );
-          })}
+        <Cards variants={cards} initial="hidden" animate="show">
+          {cartItems.length >= 1 &&
+            cartItems.map((item) => {
+              return (
+                <Card variants={card} key={item.slug}>
+                  <img
+                    src={item.image.data.attributes.formats.thumbnail.url}
+                    alt={item.title}
+                  />
+                  <CardInfo>
+                    <h3>{item.title}</h3>
+                    <h3>£{item.price}</h3>
+                    <Quantity>
+                      <span>Quantity</span>
+                      <button>
+                        <AiFillMinusCircle onClick={() => onRemove(item)} />
+                      </button>
+                      <p>{item.quantity}</p>
+                      <button onClick={() => onAdd(item, 1)}>
+                        <AiFillPlusCircle />
+                      </button>
+                    </Quantity>
+                  </CardInfo>
+                </Card>
+              );
+            })}
+        </Cards>
         {cartItems.length >= 1 && (
           <Checkout>
             <h3>Subtotal: £{totalPrice}</h3>

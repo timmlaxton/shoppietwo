@@ -83,3 +83,5 @@ export const Checkout = styled(motion.div)`
     justify-content: center;
   }
 `;
+
+export const Cards = styled(motion.div)``;
