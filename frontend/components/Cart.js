@@ -10,7 +10,7 @@ import {
 } from "../styles/CartStyle";
 import { Quantity } from "../styles/ProductDetails";
 import { FaShoppingBag } from "react-icons/Fa";
-import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/Ai";
 import getStripe from "../lib/getStripe";
 
 const card = {

@@ -7,7 +7,7 @@ import {
   Quantity,
   Buy,
 } from "../../styles/ProductDetails";
-import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/Ai";
 import { useStateContext } from "../../lib/context";
 
 export default function ProductDetails() {
